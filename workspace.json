@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "demo-jest-transform": "apps/demo-jest-transform",
+    "demo-jest-transform-e2e": "apps/demo-jest-transform-e2e"
+  }
+}

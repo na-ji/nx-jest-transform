@@ -1,0 +1,28 @@
+{
+  "root": "apps/demo-jest-transform-e2e",
+  "sourceRoot": "apps/demo-jest-transform-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/demo-jest-transform-e2e/cypress.json",
+        "devServerTarget": "demo-jest-transform:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "demo-jest-transform:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/demo-jest-transform-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["demo-jest-transform"]
+}

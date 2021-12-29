@@ -1,0 +1,73 @@
+{
+  "root": "apps/demo-jest-transform",
+  "sourceRoot": "apps/demo-jest-transform/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/demo-jest-transform",
+        "index": "apps/demo-jest-transform/src/index.html",
+        "baseHref": "/",
+        "main": "apps/demo-jest-transform/src/main.tsx",
+        "polyfills": "apps/demo-jest-transform/src/polyfills.ts",
+        "tsConfig": "apps/demo-jest-transform/tsconfig.app.json",
+        "assets": [
+          "apps/demo-jest-transform/src/favicon.ico",
+          "apps/demo-jest-transform/src/assets"
+        ],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/demo-jest-transform/src/environments/environment.ts",
+              "with": "apps/demo-jest-transform/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "demo-jest-transform:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "demo-jest-transform:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/demo-jest-transform/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/demo-jest-transform"],
+      "options": {
+        "jestConfig": "apps/demo-jest-transform/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
