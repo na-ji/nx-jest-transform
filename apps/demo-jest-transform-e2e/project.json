@@ -1,5 +1,4 @@
 {
-  "root": "apps/demo-jest-transform-e2e",
   "sourceRoot": "apps/demo-jest-transform-e2e/src",
   "projectType": "application",
   "targets": {
