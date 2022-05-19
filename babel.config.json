@@ -1,3 +1,11 @@
 {
-  "babelrcRoots": ["*"]
+  "babelrcRoots": ["*"],
+  "presets": [
+    [
+      "@nrwl/react/babel",
+      {
+        "runtime": "automatic"
+      }
+    ]
+  ]
 }
