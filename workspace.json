@@ -3,5 +3,6 @@
   "projects": {
     "demo-jest-transform": "apps/demo-jest-transform",
     "demo-jest-transform-e2e": "apps/demo-jest-transform-e2e"
-  }
+  },
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }
