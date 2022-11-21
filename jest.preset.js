@@ -1,3 +1,3 @@
 const nxPreset = require('@nrwl/jest/preset').default;
 
-module.exports = { ...nxPreset, transform: undefined };
+module.exports = { ...nxPreset, transformIgnorePatterns: ['node_modules/(?!.*\\.mjs$|ky-universal|ky)'] };
